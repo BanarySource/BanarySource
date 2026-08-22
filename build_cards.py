@@ -11,6 +11,18 @@ Como en el banner, TODO debe verse terminado sin animacion.
 Las siete tarjetas comparten el mismo lienzo (ANCHO x ALTO) a proposito: al
 escalarse al ancho de su celda, un lienzo identico da una altura identica y la
 rejilla no queda dispareja.
+
+DOS ESTILOS, uno por apartado, para que el perfil no se lea monotono:
+
+  software  Filo de color a la izquierda, placa cuadrada con las siglas y
+            chips en pildora. Es el estilo base, limpio y de producto.
+  hardware  Aire de plano tecnico: banda de color arriba en vez de filo,
+            reticula de puntos de fondo, marcas de esquina, placa hexagonal
+            (tuerca) y chips de esquina recta.
+
+Comparten paleta, tipografia y radio de esquina: cambia el tratamiento, no
+el idioma visual. El apartado de contacto usa un tercer estilo, en
+build_contact.py.
 """
 from __future__ import annotations
 
@@ -73,9 +85,41 @@ def repartir(texto: str, ancho_max: float, tam: float) -> list[str]:
     return lineas
 
 
+def hexagono(cx: float, cy: float, r: float) -> str:
+    """Hexagono de lado plano: la placa de siglas del estilo hardware, que
+    evoca una tuerca sin llegar a dibujarla."""
+    import math
+    pts = " ".join(
+        f"{cx + r * math.cos(math.radians(a)):.1f},{cy + r * math.sin(math.radians(a)):.1f}"
+        for a in range(0, 360, 60)
+    )
+    return f'<polygon points="{pts}"'
+
+
+def adornos_hardware(a: str, px: float, py: float, pw: float, ph: float) -> str:
+    """Retícula de puntos, banda superior y marcas de esquina."""
+    m = 20
+    esquinas = [
+        (px + m, py + m, 1, 1), (px + pw - m, py + m, -1, 1),
+        (px + m, py + ph - m, 1, -1), (px + pw - m, py + ph - m, -1, -1),
+    ]
+    ticks = "".join(
+        f'<path d="M{x} {y + 13 * sy} V{y} H{x + 13 * sx}" fill="none" '
+        f'stroke="{a}" stroke-opacity=".45" stroke-width="1.6"/>'
+        for x, y, sx, sy in esquinas
+    )
+    return (
+        f'<rect x="{px}" y="{py}" width="{pw}" height="{ph}" fill="url(#puntos)"/>'
+        f'<rect x="{px}" y="{py}" width="{pw}" height="8" fill="{a}"/>'
+        f'{ticks}'
+    )
+
+
 def construir(t: dict, idioma: str, tema: str) -> str:
     c, d = TEMAS[tema], t[idioma]
     a = acento(t["acento"], tema)
+    ce = acento(t["color_estado"], tema)
+    es_software = t["estilo"] == "software"
     px, py = MARGEN, MARGEN - 4
     pw, ph = ANCHO - MARGEN * 2, ALTO - MARGEN * 2
     x0 = px + PAD
@@ -96,9 +140,13 @@ def construir(t: dict, idioma: str, tema: str) -> str:
     chips, cx = [], x0
     for etiqueta in stack_de(t, idioma):
         w = ancho_texto(etiqueta, 13) + 26
+        radio = 13.5 if es_software else 4        # píldora / esquina recta
+        marca = "" if es_software else (
+            f'<rect x="{cx:.1f}" y="282" width="3" height="27" fill="{a}"'
+            f' fill-opacity=".65"/>')
         chips.append(
-            f'<rect x="{cx:.1f}" y="282" width="{w:.1f}" height="27" rx="13.5"'
-            f' fill="{c["chip"]}" stroke="{c["chip_borde"]}"/>'
+            f'<rect x="{cx:.1f}" y="282" width="{w:.1f}" height="27" rx="{radio}"'
+            f' fill="{c["chip"]}" stroke="{c["chip_borde"]}"/>{marca}'
             f'<text x="{cx + w / 2:.1f}" y="300" font-family="{FUENTE}"'
             f' font-size="13" fill="{c["chip_texto"]}" text-anchor="middle">'
             f'{escapar(etiqueta)}</text>'
@@ -108,7 +156,9 @@ def construir(t: dict, idioma: str, tema: str) -> str:
         raise ValueError(f"{t['archivo']} ({idioma}): los chips no caben en la fila.")
 
     pie = (
-        f'<circle cx="{x0 + 5}" cy="336" r="5" fill="{t["color_estado"]}"/>'
+        (f'<circle cx="{x0 + 5}" cy="336" r="5" fill="{ce}"/>' if es_software
+         else f'<rect x="{x0}" y="331" width="10" height="10" fill="{ce}"/>')
+        +
         f'<text x="{x0 + 18}" y="341" font-family="{FUENTE}" font-size="13.5"'
         f' font-weight="600" fill="{c["titulo"]}">{escapar(d["estado"])}</text>'
         f'<text x="{x0 + 26 + ancho_texto(d["estado"], 13.5)}" y="341"'
@@ -117,6 +167,24 @@ def construir(t: dict, idioma: str, tema: str) -> str:
     )
 
     tam_sigla = 17 if len(t["sigla"]) < 3 else 14
+
+    if es_software:
+        # Filo de color a la izquierda y placa cuadrada.
+        patron = ""
+        acento_panel = f'<rect x="{px}" y="{py}" width="7" height="{ph}" fill="{a}"/>'
+        placa = (f'<rect x="{x0}" y="42" width="48" height="48" rx="13" fill="{a}"'
+                 f' fill-opacity="{c["tile_op"]}" stroke="{a}" stroke-opacity=".5"/>')
+    else:
+        # Plano técnico: banda arriba, retícula de puntos, marcas de esquina
+        # y placa hexagonal.
+        patron = (f'<pattern id="puntos" width="17" height="17"'
+                  f' patternUnits="userSpaceOnUse">'
+                  f'<circle cx="1.6" cy="1.6" r="1.6" fill="{a}" fill-opacity=".13"/>'
+                  f'</pattern>')
+        acento_panel = adornos_hardware(a, px, py, pw, ph)
+        placa = (hexagono(x0 + 24, 66, 27) + f' fill="{a}"'
+                 f' fill-opacity="{c["tile_op"]}" stroke="{a}" stroke-opacity=".55"/>')
+
     etiqueta = escapar(f'{d["titulo"]} — {d["lema"]}')
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {ANCHO} {ALTO}" width="{ANCHO}" height="{ALTO}" role="img" aria-label="{etiqueta}">
   <title>{etiqueta}</title>
@@ -127,20 +195,16 @@ def construir(t: dict, idioma: str, tema: str) -> str:
     </filter>
     <clipPath id="recorte">
       <rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="18"/>
-    </clipPath>
+    </clipPath>{patron}
   </defs>
 
   <!-- Panel flotante -->
   <rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="18"
         fill="{c['panel']}" stroke="{c['borde']}" filter="url(#sombra)"/>
-  <!-- Filo de color del proyecto, recortado a la esquina redondeada -->
-  <g clip-path="url(#recorte)">
-    <rect x="{px}" y="{py}" width="7" height="{ph}" fill="{a}"/>
-  </g>
+  <g clip-path="url(#recorte)">{acento_panel}</g>
 
   <!-- Placa con la sigla -->
-  <rect x="{x0}" y="42" width="48" height="48" rx="13"
-        fill="{a}" fill-opacity="{c['tile_op']}" stroke="{a}" stroke-opacity=".5"/>
+  {placa}
   <text x="{x0 + 24}" y="{73 if len(t['sigla']) < 3 else 72}" font-family="{FUENTE}"
         font-size="{tam_sigla}" font-weight="700" fill="{a}"
         text-anchor="middle">{t['sigla']}</text>

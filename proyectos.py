@@ -14,6 +14,7 @@ VERDE, AZUL, GRIS = "#2FD69B", "#22C7F5", "#8A939C"
 TARJETAS = [
     dict(
         archivo="banary-source", sigla="BS", acento="#22C7F5",
+        estilo="software",
         stack=["React", "TypeScript", "PostgreSQL", "Prisma"],
         color_estado=VERDE, url="https://banarysource.org",
         es=dict(
@@ -33,6 +34,7 @@ TARJETAS = [
     ),
     dict(
         archivo="docentia-digital", sigla="DD", acento="#7C3AED",
+        estilo="software",
         stack=["Next.js", "TypeScript", "Supabase", "IA"],
         color_estado=VERDE, url="https://docentiadigital.com",
         es=dict(
@@ -52,6 +54,7 @@ TARJETAS = [
     ),
     dict(
         archivo="delfino", sigla="DF", acento="#2FD69B",
+        estilo="software",
         stack=["Cloudflare Workers", "Supabase", "Stripe"],
         color_estado=VERDE, url="https://delfino.app",
         es=dict(
@@ -71,6 +74,7 @@ TARJETAS = [
     ),
     dict(
         archivo="print-cost-manager", sigla="PC", acento="#FFC24F",
+        estilo="software",
         stack=["React", "TypeScript", "Vite"],
         color_estado=VERDE, url="https://printcostmanager.vercel.app",
         es=dict(
@@ -89,6 +93,7 @@ TARJETAS = [
     ),
     dict(
         archivo="robotbuscador", sigla="RB", acento="#FF7A5C",
+        estilo="hardware",
         stack=["ESP32-S3", "C++", "Visión artificial"],
         stack_en=["ESP32-S3", "C++", "Computer vision"],
         color_estado=AZUL, url=None,
@@ -111,6 +116,7 @@ TARJETAS = [
     ),
     dict(
         archivo="micromouse", sigla="MM", acento="#B98CFF",
+        estilo="hardware",
         stack=["RP2040", "C++", "Open source"],
         color_estado=GRIS,
         url="https://github.com/BanarySource/Micromouse-RP2040-Zero",
@@ -131,6 +137,7 @@ TARJETAS = [
     ),
     dict(
         archivo="entrenadora-pic", sigla="PIC", acento="#22C7F5",
+        estilo="hardware",
         stack=["PIC18F4550", "Electrónica", "PCB"],
         stack_en=["PIC18F4550", "Electronics", "PCB"],
         color_estado=VERDE, url="https://www.youtube.com/c/banarysource",
@@ -258,9 +265,9 @@ CONTACTOS = [
         archivo="youtube", icono="youtube", color="#FF3B30", ancho=400,
         url="https://www.youtube.com/@BanarySource",
         es=dict(nombre="YouTube", dato="@BanarySource",
-                nota="Cursos y tutoriales desde 2015"),
+                nota="Cursos y tutoriales prácticos"),
         en=dict(nombre="YouTube", dato="@BanarySource",
-                nota="Courses and tutorials since 2015"),
+                nota="Hands-on courses and tutorials"),
     ),
     dict(
         archivo="instagram", icono="instagram", color="#E1306C", ancho=400,

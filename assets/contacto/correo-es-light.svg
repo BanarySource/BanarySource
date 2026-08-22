@@ -10,17 +10,20 @@
 
   <rect x="10" y="6" width="600" height="128" rx="16"
         fill="#FFFFFF" stroke="#E1E7EC" filter="url(#s)"/>
-  <g clip-path="url(#r)"><rect x="10" y="6" width="6" height="128" fill="#8A5A00"/></g>
 
-  <g transform="translate(36 30) scale(1.4167)"><g fill="none" stroke="#8A5A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Disco de color con el icono dentro: el acento de este apartado -->
+  <circle cx="58" cy="52" r="25" fill="#8A5A00" fill-opacity=".14"
+          stroke="#8A5A00" stroke-opacity=".45"/>
+  <g transform="translate(42 36) scale(1.3333)"><g fill="none" stroke="#8A5A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <rect x="2.5" y="5" width="19" height="14" rx="2.5"/>
       <path d="M3.4 7.2 12 13.4l8.6-6.2"/>
     </g></g>
 
-  <text x="86" y="47" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="23"
+  <text x="98" y="46" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="23"
         font-weight="700" fill="#16181C">Correo</text>
-  <text x="86" y="70" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="16"
+  <path d="M98 56 h34" stroke="#8A5A00" stroke-width="3" stroke-linecap="round"/>
+  <text x="98" y="78" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="16"
         font-weight="600" fill="#8A5A00">contacto@banarysource.org</text>
-  <text x="36" y="112" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="16"
+  <text x="36" y="115" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="16"
         fill="#5A626B">Escríbenos y te contestamos</text>
 </svg>

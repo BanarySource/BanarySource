@@ -5,8 +5,14 @@ Los paneles son SVG por el mismo motivo que las tarjetas: GitHub borra el CSS
 de un README, asi que un panel con fondo, borde y sombra hay que dibujarlo.
 Cada uno se envuelve en un enlace, asi que el panel entero es clicable.
 
-Cada red lleva SU color de marca en el filo y el icono: es lo que hace que se
-reconozca de un vistazo sin depender del logotipo original.
+Cada red lleva SU color de marca: es lo que hace que se reconozca de un
+vistazo sin depender del logotipo original.
+
+TERCER ESTILO, distinto al de las tarjetas de proyecto para que el perfil no
+se lea monotono: aqui el color no va en un filo lateral ni en una banda, sino
+en un DISCO relleno detras del icono, con un subrayado corto bajo el nombre.
+Comparte paleta, tipografia y radio de esquina con los otros dos: cambia el
+tratamiento, no el idioma visual.
 
 NADA de cifras de seguidores. Un README es estatico: un numero escrito hoy se
 queda congelado y a las pocas semanas hace ver el perfil abandonado. Los
@@ -59,8 +65,8 @@ def construir(c_: dict, idioma: str, tema: str) -> str:
     pw, ph = ancho - MARGEN * 2, ALTO - MARGEN * 2
     x0 = px + PAD
 
-    for campo, tam, limite in ((d["nombre"], 23, ancho - MARGEN - PAD - 66),
-                               (d["dato"], 16, ancho - MARGEN - PAD - 66),
+    for campo, tam, limite in ((d["nombre"], 23, ancho - MARGEN - PAD - 78),
+                               (d["dato"], 16, ancho - MARGEN - PAD - 78),
                                (d["nota"], 16, ancho - MARGEN - PAD * 2)):
         if ancho_texto(campo, tam) > limite:
             raise ValueError(f"{c_['archivo']} ({idioma}): «{campo}» no cabe. "
@@ -79,15 +85,18 @@ def construir(c_: dict, idioma: str, tema: str) -> str:
 
   <rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="16"
         fill="{t['panel']}" stroke="{t['borde']}" filter="url(#s)"/>
-  <g clip-path="url(#r)"><rect x="{px}" y="{py}" width="6" height="{ph}" fill="{a}"/></g>
 
-  {icono(c_["icono"], a, x0, 30, 34)}
+  <!-- Disco de color con el icono dentro: el acento de este apartado -->
+  <circle cx="{x0 + 22}" cy="52" r="25" fill="{a}" fill-opacity=".14"
+          stroke="{a}" stroke-opacity=".45"/>
+  {icono(c_["icono"], a, x0 + 6, 36, 32)}
 
-  <text x="{x0 + 50}" y="47" font-family="{FUENTE}" font-size="23"
+  <text x="{x0 + 62}" y="46" font-family="{FUENTE}" font-size="23"
         font-weight="700" fill="{t['titulo']}">{escapar(d["nombre"])}</text>
-  <text x="{x0 + 50}" y="70" font-family="{FUENTE}" font-size="16"
+  <path d="M{x0 + 62} 56 h34" stroke="{a}" stroke-width="3" stroke-linecap="round"/>
+  <text x="{x0 + 62}" y="78" font-family="{FUENTE}" font-size="16"
         font-weight="600" fill="{a}">{escapar(d["dato"])}</text>
-  <text x="{x0}" y="112" font-family="{FUENTE}" font-size="16"
+  <text x="{x0}" y="115" font-family="{FUENTE}" font-size="16"
         fill="{t['texto']}">{escapar(d["nota"])}</text>
 </svg>
 '''
