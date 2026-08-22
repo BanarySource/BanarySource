@@ -9,6 +9,8 @@ from __future__ import annotations
 import base64
 import pathlib
 
+from proyectos import IDIOMAS
+
 RAIZ = pathlib.Path(__file__).resolve().parent
 ASSETS = RAIZ / "assets"
 
@@ -66,10 +68,10 @@ def trazos_circuito(c: dict) -> str:
     return "".join(piezas)
 
 
-def construir(tema: str, logo_b64: str) -> str:
-    c = TEMAS[tema]
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="Banary Source - Robotica, Software y Educacion">
-  <title>Banary Source — Robótica · Software · Educación</title>
+def construir(tema: str, idioma: str, logo_b64: str) -> str:
+    c, t = TEMAS[tema], IDIOMAS[idioma]
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="{t['alt_banner']}">
+  <title>{t["alt_banner"]}</title>
   <defs>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="{c['marca']}" stop-opacity="{c['glow']}"/>
@@ -118,9 +120,9 @@ def construir(tema: str, logo_b64: str) -> str:
           letter-spacing="7" fill="{c['texto']}">BANARY SOURCE</text>
     <path class="subray" d="M322 160 H742"/>
     <text x="322" y="200" font-family="{FUENTE}" font-size="25" font-weight="600"
-          letter-spacing="1.5" fill="{c['marca']}">Robótica · Software · Educación</text>
+          letter-spacing="1.5" fill="{c['marca']}">{t["lema_grande"]}</text>
     <text x="322" y="232" font-family="{FUENTE}" font-size="17" font-weight="400"
-          letter-spacing=".8" fill="{c['tenue']}">Robotics · Software · Education</text>
+          letter-spacing=".8" fill="{c['tenue']}">{t["lema_chico"]}</text>
 
     <rect x="0" y="292" width="1200" height="8" fill="{c['marca']}" opacity=".9"/>
   </g>
@@ -131,10 +133,11 @@ def construir(tema: str, logo_b64: str) -> str:
 def main() -> None:
     logo_b64 = base64.b64encode((ASSETS / "logo.png").read_bytes()).decode("ascii")
     ASSETS.mkdir(exist_ok=True)
-    for tema in TEMAS:
-        destino = ASSETS / f"banner-{tema}.svg"
-        destino.write_text(construir(tema, logo_b64), encoding="utf-8")
-        print(f"{destino.name}: {destino.stat().st_size:,} bytes")
+    for idioma in IDIOMAS:
+        for tema in TEMAS:
+            destino = ASSETS / f"banner-{idioma}-{tema}.svg"
+            destino.write_text(construir(tema, idioma, logo_b64), encoding="utf-8")
+            print(f"{destino.name}: {destino.stat().st_size:,} bytes")
 
 
 if __name__ == "__main__":

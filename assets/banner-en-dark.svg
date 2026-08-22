@@ -1,30 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="Banary Source - Robotica, Software y Educacion">
-  <title>Banary Source — Robótica · Software · Educación</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="Banary Source — Robotics · Software · Education">
+  <title>Banary Source — Robotics · Software · Education</title>
   <defs>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#0E9CCF" stop-opacity=".22"/>
-      <stop offset="60%" stop-color="#0E9CCF" stop-opacity=".08"/>
-      <stop offset="100%" stop-color="#0E9CCF" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#22C7F5" stop-opacity=".55"/>
+      <stop offset="60%" stop-color="#22C7F5" stop-opacity=".08"/>
+      <stop offset="100%" stop-color="#22C7F5" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="regla" gradientUnits="userSpaceOnUse" x1="322" y1="0" x2="742" y2="0">
-      <stop offset="0%" stop-color="#0E9CCF"/>
-      <stop offset="70%" stop-color="#0E9CCF" stop-opacity=".35"/>
-      <stop offset="100%" stop-color="#0E9CCF" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#22C7F5"/>
+      <stop offset="70%" stop-color="#22C7F5" stop-opacity=".35"/>
+      <stop offset="100%" stop-color="#22C7F5" stop-opacity="0"/>
     </linearGradient>
     <clipPath id="marco"><rect x="0" y="0" width="1200" height="300" rx="20"/></clipPath>
   </defs>
   <style>
-    .pista  { fill:none; stroke:#0E9CCF; stroke-opacity:.16; stroke-width:2;
+    .pista  { fill:none; stroke:#22C7F5; stroke-opacity:.16; stroke-width:2;
                stroke-linecap:round; stroke-linejoin:round; }
-    .pulso  { fill:none; stroke:#0E9CCF; stroke-opacity:.95; stroke-width:2.5;
+    .pulso  { fill:none; stroke:#22C7F5; stroke-opacity:.95; stroke-width:2.5;
                stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:70 410; }
-    .nodo   { fill:#0E9CCF; }
+    .nodo   { fill:#22C7F5; }
     .subray { stroke:url(#regla); stroke-width:3; stroke-linecap:round; fill:none; }
-    .rejilla{ stroke:#0E9CCF; stroke-opacity:.06; stroke-width:1; fill:none; }
+    .rejilla{ stroke:#22C7F5; stroke-opacity:.06; stroke-width:1; fill:none; }
   </style>
 
   <g clip-path="url(#marco)">
-    <rect width="1200" height="300" fill="#F7F8FA"/>
+    <rect width="1200" height="300" fill="#16181C"/>
     <g class="rejilla">
       <path d="M0 75h1200M0 150h1200M0 225h1200"/>
       <path d="M300 0v300M600 0v300M900 0v300"/>
@@ -43,15 +43,15 @@
            preserveAspectRatio="xMidYMid meet"/>
 
     <text x="324" y="74" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="14" font-weight="600"
-          letter-spacing="4.5" fill="#5A626B">EST. 2018 · MÉXICO</text>
+          letter-spacing="4.5" fill="#A3AAB3">EST. 2018 · MÉXICO</text>
     <text x="320" y="136" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="60" font-weight="700"
-          letter-spacing="7" fill="#16181C">BANARY SOURCE</text>
+          letter-spacing="7" fill="#F7F8FA">BANARY SOURCE</text>
     <path class="subray" d="M322 160 H742"/>
     <text x="322" y="200" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="25" font-weight="600"
-          letter-spacing="1.5" fill="#0E9CCF">Robótica · Software · Educación</text>
+          letter-spacing="1.5" fill="#22C7F5">Robotics · Software · Education</text>
     <text x="322" y="232" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="17" font-weight="400"
-          letter-spacing=".8" fill="#5A626B">Robotics · Software · Education</text>
+          letter-spacing=".8" fill="#A3AAB3">Technology and robotics from Mexico</text>
 
-    <rect x="0" y="292" width="1200" height="8" fill="#0E9CCF" opacity=".9"/>
+    <rect x="0" y="292" width="1200" height="8" fill="#22C7F5" opacity=".9"/>
   </g>
 </svg>

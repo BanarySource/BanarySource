@@ -12,6 +12,8 @@ from __future__ import annotations
 
 import pathlib
 
+from proyectos import CHIPS_STACK, IDIOMAS
+
 RAIZ = pathlib.Path(__file__).resolve().parent
 ASSETS = RAIZ / "assets"
 
@@ -24,15 +26,6 @@ TEMAS = {
 
 FUENTE = "'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif"
 
-FILAS = [
-    ("SOFTWARE", ["TypeScript", "React", "Next.js", "Node.js", "Python",
-                  "FastAPI", "Vite", "Electron"]),
-    ("DATOS E INFRA", ["PostgreSQL", "Supabase", "Prisma", "Cloudflare Workers",
-                       "Vercel", "Railway", "Stripe", "Docker"]),
-    ("HARDWARE", ["ESP32", "RP2040", "Arduino", "C++", "PIC18F", "KiCad",
-                  "Impresión 3D", "Visión artificial"]),
-]
-
 # Geometria
 MARGEN_X = 34
 ANCHO = 1200
@@ -44,19 +37,27 @@ TAM_TEXTO = 15
 ANCHO_CARACTER = 0.545  # aproximacion del ancho medio de glifo para esta fuente
 
 
+def escapar(s: str) -> str:
+    """Todo texto que entra al SVG pasa por aqui: un "&" sin escapar (p. ej.
+    "DATA & INFRA") produce un XML invalido y la imagen no carga."""
+    return (s.replace("&", "&amp;").replace("<", "&lt;")
+             .replace(">", "&gt;").replace('"', "&quot;"))
+
+
 def ancho_chip(etiqueta: str) -> float:
     return len(etiqueta) * TAM_TEXTO * ANCHO_CARACTER + PAD_CHIP * 2
 
 
-def construir(tema: str) -> str:
+def construir(tema: str, idioma: str) -> str:
     c = TEMAS[tema]
+    filas = zip(IDIOMAS[idioma]["filas_stack"], CHIPS_STACK[idioma])
     cuerpo: list[str] = []
     y = 40
 
-    for titulo, etiquetas in FILAS:
+    for titulo, etiquetas in filas:
         cuerpo.append(
             f'<text x="{MARGEN_X}" y="{y}" font-family="{FUENTE}" font-size="12"'
-            f' font-weight="700" letter-spacing="3" fill="{c["titulo"]}">{titulo}</text>'
+            f' font-weight="700" letter-spacing="3" fill="{c["titulo"]}">{escapar(titulo)}</text>'
         )
         x = MARGEN_X
         fila_y = y + 14
@@ -70,7 +71,7 @@ def construir(tema: str) -> str:
                 f' rx="{ALTO_CHIP / 2}" fill="{c["chip"]}" stroke="{c["borde"]}"/>'
                 f'<text x="{x + w / 2:.1f}" y="{fila_y + 22}" font-family="{FUENTE}"'
                 f' font-size="{TAM_TEXTO}" font-weight="500" fill="{c["texto"]}"'
-                f' text-anchor="middle">{etiqueta}</text>'
+                f' text-anchor="middle">{escapar(etiqueta)}</text>'
             )
             x += w + HUECO
         y = fila_y + SALTO_FILA
@@ -89,10 +90,11 @@ def construir(tema: str) -> str:
 
 def main() -> None:
     ASSETS.mkdir(exist_ok=True)
-    for tema in TEMAS:
-        destino = ASSETS / f"stack-{tema}.svg"
-        destino.write_text(construir(tema), encoding="utf-8")
-        print(f"{destino.name}: {destino.stat().st_size:,} bytes")
+    for idioma in IDIOMAS:
+        for tema in TEMAS:
+            destino = ASSETS / f"stack-{idioma}-{tema}.svg"
+            destino.write_text(construir(tema, idioma), encoding="utf-8")
+            print(f"{destino.name}: {destino.stat().st_size:,} bytes")
 
 
 if __name__ == "__main__":
