@@ -16,7 +16,7 @@ from __future__ import annotations
 
 import pathlib
 
-from proyectos import TARJETAS, stack_de
+from proyectos import TARJETAS, acento, stack_de
 
 RAIZ = pathlib.Path(__file__).resolve().parent
 ASSETS = RAIZ / "assets" / "cards"
@@ -75,7 +75,7 @@ def repartir(texto: str, ancho_max: float, tam: float) -> list[str]:
 
 def construir(t: dict, idioma: str, tema: str) -> str:
     c, d = TEMAS[tema], t[idioma]
-    a = t["acento"]
+    a = acento(t["acento"], tema)
     px, py = MARGEN, MARGEN - 4
     pw, ph = ANCHO - MARGEN * 2, ALTO - MARGEN * 2
     x0 = px + PAD

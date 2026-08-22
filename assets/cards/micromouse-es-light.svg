@@ -15,22 +15,22 @@
         fill="#FFFFFF" stroke="#E1E7EC" filter="url(#sombra)"/>
   <!-- Filo de color del proyecto, recortado a la esquina redondeada -->
   <g clip-path="url(#recorte)">
-    <rect x="14" y="10" width="7" height="344" fill="#B98CFF"/>
+    <rect x="14" y="10" width="7" height="344" fill="#6D3BC4"/>
   </g>
 
   <!-- Placa con la sigla -->
   <rect x="48" y="42" width="48" height="48" rx="13"
-        fill="#B98CFF" fill-opacity=".12" stroke="#B98CFF" stroke-opacity=".5"/>
+        fill="#6D3BC4" fill-opacity=".12" stroke="#6D3BC4" stroke-opacity=".5"/>
   <text x="72" y="73" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif"
-        font-size="17" font-weight="700" fill="#B98CFF"
+        font-size="17" font-weight="700" fill="#6D3BC4"
         text-anchor="middle">MM</text>
 
   <text x="112" y="65" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="25"
         font-weight="700" fill="#16181C">Micromouse RP2040</text>
   <text x="112" y="87" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="14.5"
-        font-weight="600" fill="#B98CFF">Hardware abierto</text>
+        font-weight="600" fill="#6D3BC4">Hardware abierto</text>
 
   <text x="48" y="177.5" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="15" fill="#5A626B">Firmware de prueba para cada periférico del micromouse basado en</text><text x="48" y="200.5" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="15" fill="#5A626B">RP2040-Zero. Verifica el hardware pieza por pieza y arranca el</text><text x="48" y="223.5" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="15" fill="#5A626B">prototipo sin pelearse con todo a la vez.</text>
   <rect x="48.0" y="282" width="65.2" height="27" rx="13.5" fill="#F2F5F8" stroke="#DFE5EB"/><text x="80.6" y="300" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#3A424B" text-anchor="middle">RP2040</text><rect x="120.2" y="282" width="45.6" height="27" rx="13.5" fill="#F2F5F8" stroke="#DFE5EB"/><text x="143.0" y="300" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#3A424B" text-anchor="middle">C++</text><rect x="172.9" y="282" width="97.9" height="27" rx="13.5" fill="#F2F5F8" stroke="#DFE5EB"/><text x="221.8" y="300" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#3A424B" text-anchor="middle">Open source</text>
-  <circle cx="53" cy="336" r="5" fill="#8A939C"/><text x="66" y="341" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="600" fill="#16181C">Código abierto</text><text x="169.067" y="341" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13.5" fill="#B98CFF">— ver el repositorio</text>
+  <circle cx="53" cy="336" r="5" fill="#8A939C"/><text x="66" y="341" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="600" fill="#16181C">Código abierto</text><text x="169.067" y="341" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13.5" fill="#6D3BC4">— ver el repositorio</text>
 </svg>

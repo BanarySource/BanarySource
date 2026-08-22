@@ -227,3 +227,84 @@ CHIPS_STACK = {
         ["ESP32", "RP2040", "Arduino", "C++", "PIC18F", "KiCad", "3D printing", "Computer vision"],
     ],
 }
+
+
+# --- Contacto -------------------------------------------------------------
+# Cada red lleva SU color de marca: es lo que la hace reconocible de un
+# vistazo sin usar el logotipo original. `ancho` es el lienzo del panel, y va
+# emparejado con cuántos caben por fila en el README (2 anchos o 3 estrechos),
+# para que los dos grupos se vean a la misma escala.
+#
+# `nota` dice QUÉ hay en cada canal. Nunca cifras de seguidores: un README es
+# estático y un número escrito hoy se congela.
+CONTACTOS = [
+    dict(
+        archivo="plataforma", icono="globo", color="#22C7F5", ancho=620,
+        url="https://banarysource.org",
+        es=dict(nombre="Plataforma", dato="banarysource.org",
+                nota="El aula y el club de robótica, en línea"),
+        en=dict(nombre="Platform", dato="banarysource.org",
+                nota="The classroom and the robotics club, online"),
+    ),
+    dict(
+        archivo="correo", icono="correo", color="#FFC24F", ancho=620,
+        url="mailto:contacto@banarysource.org",
+        es=dict(nombre="Correo", dato="contacto@banarysource.org",
+                nota="Escríbenos y te contestamos"),
+        en=dict(nombre="Email", dato="contacto@banarysource.org",
+                nota="Write to us and we'll get back to you"),
+    ),
+    dict(
+        archivo="youtube", icono="youtube", color="#FF3B30", ancho=400,
+        url="https://www.youtube.com/@BanarySource",
+        es=dict(nombre="YouTube", dato="@BanarySource",
+                nota="Prácticas y proyectos"),
+        en=dict(nombre="YouTube", dato="@BanarySource",
+                nota="Practice and projects"),
+    ),
+    dict(
+        archivo="instagram", icono="instagram", color="#E1306C", ancho=400,
+        url="https://www.instagram.com/banarysource",
+        es=dict(nombre="Instagram", dato="@banarysource",
+                nota="El día a día del taller"),
+        en=dict(nombre="Instagram", dato="@banarysource",
+                nota="Day to day in the workshop"),
+    ),
+    dict(
+        archivo="tiktok", icono="tiktok", color="#25F4EE", ancho=400,
+        url="https://www.tiktok.com/@banarysource",
+        es=dict(nombre="TikTok", dato="@banarysource",
+                nota="Robótica en formato corto"),
+        en=dict(nombre="TikTok", dato="@banarysource",
+                nota="Robotics, short-form"),
+    ),
+]
+
+
+# --- Contraste en tema claro ----------------------------------------------
+# Los acentos están pensados para fondo oscuro. Sobre blanco, los claros
+# (cian, ámbar, verde, coral) se leen mal: gris pálido en vez de color. Aquí
+# está la variante oscurecida de cada uno. Varias —#8A5A00, #B4421C,
+# #0E7A5A— son las que el propio CSS de banarysource.org ya usa en su tema
+# claro, así que no se inventa nada donde la marca ya decidió.
+ACENTO_CLARO = {
+    "#22C7F5": "#0E7FA8",   # cian de marca
+    "#7C3AED": "#6425CE",   # violeta de Docentia
+    "#2FD69B": "#0E7A5A",   # verde
+    "#FFC24F": "#8A5A00",   # ámbar
+    "#FF7A5C": "#B4421C",   # coral
+    "#B98CFF": "#6D3BC4",   # violeta claro
+    "#8A939C": "#5A626B",   # gris
+    "#FF3B30": "#C2261C",   # rojo de YouTube
+    "#E1306C": "#B81E55",   # rosa de Instagram
+    "#25F4EE": "#0A8C88",   # cian de TikTok
+}
+
+
+def acento(color: str, tema: str) -> str:
+    """El acento tal cual en oscuro; su variante legible en claro."""
+    if tema != "light":
+        return color
+    if color not in ACENTO_CLARO:
+        raise KeyError(f"{color} no tiene variante clara en ACENTO_CLARO")
+    return ACENTO_CLARO[color]

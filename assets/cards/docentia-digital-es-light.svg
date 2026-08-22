@@ -15,22 +15,22 @@
         fill="#FFFFFF" stroke="#E1E7EC" filter="url(#sombra)"/>
   <!-- Filo de color del proyecto, recortado a la esquina redondeada -->
   <g clip-path="url(#recorte)">
-    <rect x="14" y="10" width="7" height="344" fill="#7C3AED"/>
+    <rect x="14" y="10" width="7" height="344" fill="#6425CE"/>
   </g>
 
   <!-- Placa con la sigla -->
   <rect x="48" y="42" width="48" height="48" rx="13"
-        fill="#7C3AED" fill-opacity=".12" stroke="#7C3AED" stroke-opacity=".5"/>
+        fill="#6425CE" fill-opacity=".12" stroke="#6425CE" stroke-opacity=".5"/>
   <text x="72" y="73" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif"
-        font-size="17" font-weight="700" fill="#7C3AED"
+        font-size="17" font-weight="700" fill="#6425CE"
         text-anchor="middle">DD</text>
 
   <text x="112" y="65" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="25"
         font-weight="700" fill="#16181C">Docentia Digital</text>
   <text x="112" y="87" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="14.5"
-        font-weight="600" fill="#7C3AED">Gestión académica inteligente</text>
+        font-weight="600" fill="#6425CE">Gestión académica inteligente</text>
 
   <text x="48" y="177.5" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="15" fill="#5A626B">Calificaciones, rúbricas y evaluación asistida por IA para docentes.</text><text x="48" y="200.5" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="15" fill="#5A626B">La IA elige un nivel declarado de la rúbrica y justifica la nota en</text><text x="48" y="223.5" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="15" fill="#5A626B">los términos del propio profesor.</text>
   <rect x="48.0" y="282" width="71.8" height="27" rx="13.5" fill="#F2F5F8" stroke="#DFE5EB"/><text x="83.9" y="300" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#3A424B" text-anchor="middle">Next.js</text><rect x="126.8" y="282" width="91.4" height="27" rx="13.5" fill="#F2F5F8" stroke="#DFE5EB"/><text x="172.5" y="300" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#3A424B" text-anchor="middle">TypeScript</text><rect x="225.2" y="282" width="78.3" height="27" rx="13.5" fill="#F2F5F8" stroke="#DFE5EB"/><text x="264.3" y="300" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#3A424B" text-anchor="middle">Supabase</text><rect x="310.5" y="282" width="39.1" height="27" rx="13.5" fill="#F2F5F8" stroke="#DFE5EB"/><text x="330.0" y="300" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#3A424B" text-anchor="middle">IA</text>
-  <circle cx="53" cy="336" r="5" fill="#2FD69B"/><text x="66" y="341" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="600" fill="#16181C">En producción</text><text x="162.2765" y="341" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13.5" fill="#7C3AED">— docentiadigital.com</text>
+  <circle cx="53" cy="336" r="5" fill="#2FD69B"/><text x="66" y="341" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="600" fill="#16181C">En producción</text><text x="162.2765" y="341" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13.5" fill="#6425CE">— docentiadigital.com</text>
 </svg>

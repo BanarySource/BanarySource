@@ -13,18 +13,39 @@ directamente se pierde en la siguiente generación.
 python build_banner.py    # 4 banners  (2 idiomas x 2 temas)
 python build_stack.py     # 4 tiras de tecnologías
 python build_cards.py     # 28 tarjetas (7 proyectos x 2 idiomas x 2 temas)
+python build_contact.py   # 20 paneles de contacto + 2 iconos de sección
 python build_readme.py    # README.md, README.en.md y preview.html
 ```
 
-Si tocas `proyectos.py`, corre los cuatro. `build_readme.py` va al final,
-porque es el que arma los archivos que GitHub muestra.
+Si tocas `proyectos.py`, corre los cinco. `build_readme.py` va al final: es el
+que valida los 58 SVG y arma los archivos que GitHub muestra.
 
 **Para cambiar un texto de proyecto:** su entrada en `TARJETAS`, en las dos
-claves `es` y `en`. **Para los textos del perfil** (titular, intro,
-encabezados, pie): el diccionario `IDIOMAS`. **Para la tira de tecnologías:**
-`CHIPS_STACK`. **Para colores:** el diccionario `TEMAS` de cada generador; la
-paleta sale del CSS en producción de banarysource.org (cian de marca `#22C7F5`
-sobre tinta `#16181C`).
+claves `es` y `en`. **Para una red social o el correo:** `CONTACTOS`. **Para
+los textos del perfil** (titular, intro, encabezados, pie): el diccionario
+`IDIOMAS`. **Para la tira de tecnologías:** `CHIPS_STACK`. **Para colores:**
+el diccionario `TEMAS` de cada generador; la paleta sale del CSS en producción
+de banarysource.org (cian de marca `#22C7F5` sobre tinta `#16181C`).
+
+**Si añades un color de acento**, mételo también en `ACENTO_CLARO`. Los
+acentos están pensados para fondo oscuro y sobre blanco los claros se leen
+como gris pálido; ese diccionario tiene la variante oscurecida de cada uno, y
+`acento()` **falla a propósito** si le pasas un color que no está.
+
+## Nada de emoji, y nada de cifras de seguidores
+
+**Emoji, no.** Lo pinta el sistema operativo de quien mira: cambia de forma en
+Windows, Mac y Android, y los de bandera en Windows ni siquiera salen (se ven
+como dos letras). Los iconos se dibujan en `iconos.py`, monolínea sobre una
+retícula de 24x24, y se ven igual en todas partes. Los de los títulos de
+sección van en el cian de marca y en un solo archivo: ese cian se lee bien
+sobre los dos fondos de GitHub, así que no necesitan variante clara/oscura.
+
+**Cifras de seguidores, tampoco.** Un README es estático: un número escrito
+hoy se congela y a las pocas semanas hace ver el perfil abandonado. Los
+paneles de contacto dicen QUÉ hay en cada canal, que es cierto siempre. Si
+algún día se quieren cifras de verdad, la única vía honesta es una GitHub
+Action que regenere el SVG cada día — no un número a mano.
 
 ## El idioma
 

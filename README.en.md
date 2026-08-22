@@ -4,13 +4,6 @@
 
 <p><b>English</b> &nbsp;·&nbsp; <a href="README.md">Español</a></p>
 
-<p>
-  <a href="https://banarysource.org"><b>Platform</b></a> &nbsp;·&nbsp;
-  <a href="https://www.youtube.com/c/banarysource"><b>YouTube</b></a> &nbsp;·&nbsp;
-  <a href="https://www.instagram.com/banarysource"><b>Instagram</b></a> &nbsp;·&nbsp;
-  <a href="https://x.com/banarysource"><b>X</b></a>
-</p>
-
 </div>
 
 ---
@@ -23,7 +16,7 @@ We are a technology development company. We build the **software** we teach with
 
 ## Projects
 
-### 💻 Software and platforms
+### <img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/icons/codigo.svg" width="21" align="top" alt=""> Software and platforms
 
 <table>
 <tr>
@@ -36,7 +29,7 @@ We are a technology development company. We build the **software** we teach with
 </tr>
 </table>
 
-### 🤖 Robotics and hardware
+### <img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/icons/robot.svg" width="21" align="top" alt=""> Robotics and hardware
 
 <table>
 <tr>
@@ -61,10 +54,13 @@ We are a technology development company. We build the **software** we teach with
 
 ## Get in touch
 
-**Platform** — [banarysource.org](https://banarysource.org)  
-**YouTube** — [/c/banarysource](https://www.youtube.com/c/banarysource)  
-**Instagram** — [@banarysource](https://www.instagram.com/banarysource)  
-**X** — [@banarysource](https://x.com/banarysource)  
+<table>
+<tr><td width="50%" valign="top"><a href="https://banarysource.org"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/plataforma-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/plataforma-en-light.svg"><img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/plataforma-en-dark.svg" width="100%" alt="Platform: banarysource.org. The classroom and the robotics club, online."></picture></a></td><td width="50%" valign="top"><a href="mailto:contacto@banarysource.org"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/correo-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/correo-en-light.svg"><img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/correo-en-dark.svg" width="100%" alt="Email: contacto@banarysource.org. Write to us and we'll get back to you."></picture></a></td></tr>
+</table>
+
+<table>
+<tr><td width="33%" valign="top"><a href="https://www.youtube.com/@BanarySource"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/youtube-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/youtube-en-light.svg"><img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/youtube-en-dark.svg" width="100%" alt="YouTube: @BanarySource. Practice and projects."></picture></a></td><td width="33%" valign="top"><a href="https://www.instagram.com/banarysource"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/instagram-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/instagram-en-light.svg"><img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/instagram-en-dark.svg" width="100%" alt="Instagram: @banarysource. Day to day in the workshop."></picture></a></td><td width="33%" valign="top"><a href="https://www.tiktok.com/@banarysource"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/tiktok-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/tiktok-en-light.svg"><img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/tiktok-en-dark.svg" width="100%" alt="TikTok: @banarysource. Robotics, short-form."></picture></a></td></tr>
+</table>
 
 <div align="center">
 <sub>Most of our work lives in private repositories.<br>

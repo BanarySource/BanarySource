@@ -15,22 +15,22 @@
         fill="#FFFFFF" stroke="#E1E7EC" filter="url(#sombra)"/>
   <!-- Filo de color del proyecto, recortado a la esquina redondeada -->
   <g clip-path="url(#recorte)">
-    <rect x="14" y="10" width="7" height="344" fill="#FF7A5C"/>
+    <rect x="14" y="10" width="7" height="344" fill="#B4421C"/>
   </g>
 
   <!-- Placa con la sigla -->
   <rect x="48" y="42" width="48" height="48" rx="13"
-        fill="#FF7A5C" fill-opacity=".12" stroke="#FF7A5C" stroke-opacity=".5"/>
+        fill="#B4421C" fill-opacity=".12" stroke="#B4421C" stroke-opacity=".5"/>
   <text x="72" y="73" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif"
-        font-size="17" font-weight="700" fill="#FF7A5C"
+        font-size="17" font-weight="700" fill="#B4421C"
         text-anchor="middle">RB</text>
 
   <text x="112" y="65" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="25"
         font-weight="700" fill="#16181C">RobotBuscador</text>
   <text x="112" y="87" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="14.5"
-        font-weight="600" fill="#FF7A5C">InnoBótica 2026 · InnovaTecNM</text>
+        font-weight="600" fill="#B4421C">InnoBótica 2026 · InnovaTecNM</text>
 
   <text x="48" y="177.5" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="15" fill="#5A626B">A fully autonomous 14 cm robot that finds and pushes 12 cones off a</text><text x="48" y="200.5" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="15" fill="#5A626B">122×244 cm board in five minutes. Localization is solved first:</text><text x="48" y="223.5" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="15" fill="#5A626B">changing strategy means changing code, not redesigning the robot.</text>
   <rect x="48.0" y="282" width="78.3" height="27" rx="13.5" fill="#F2F5F8" stroke="#DFE5EB"/><text x="87.2" y="300" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#3A424B" text-anchor="middle">ESP32-S3</text><rect x="133.3" y="282" width="45.6" height="27" rx="13.5" fill="#F2F5F8" stroke="#DFE5EB"/><text x="156.1" y="300" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#3A424B" text-anchor="middle">C++</text><rect x="185.9" y="282" width="124.1" height="27" rx="13.5" fill="#F2F5F8" stroke="#DFE5EB"/><text x="248.0" y="300" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#3A424B" text-anchor="middle">Computer vision</text>
-  <circle cx="53" cy="336" r="5" fill="#22C7F5"/><text x="66" y="341" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="600" fill="#16181C">In competition</text><text x="169.067" y="341" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13.5" fill="#FF7A5C">— Regional stage · September 2026</text>
+  <circle cx="53" cy="336" r="5" fill="#22C7F5"/><text x="66" y="341" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="600" fill="#16181C">In competition</text><text x="169.067" y="341" font-family="'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" font-size="13.5" fill="#B4421C">— Regional stage · September 2026</text>
 </svg>

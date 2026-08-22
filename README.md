@@ -4,13 +4,6 @@
 
 <p><b>Español</b> &nbsp;·&nbsp; <a href="README.en.md">English</a></p>
 
-<p>
-  <a href="https://banarysource.org"><b>Plataforma</b></a> &nbsp;·&nbsp;
-  <a href="https://www.youtube.com/c/banarysource"><b>YouTube</b></a> &nbsp;·&nbsp;
-  <a href="https://www.instagram.com/banarysource"><b>Instagram</b></a> &nbsp;·&nbsp;
-  <a href="https://x.com/banarysource"><b>X</b></a>
-</p>
-
 </div>
 
 ---
@@ -23,7 +16,7 @@ Somos una empresa de desarrollo tecnológico. Hacemos el **software** con el que
 
 ## Proyectos
 
-### 💻 Software y plataformas
+### <img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/icons/codigo.svg" width="21" align="top" alt=""> Software y plataformas
 
 <table>
 <tr>
@@ -36,7 +29,7 @@ Somos una empresa de desarrollo tecnológico. Hacemos el **software** con el que
 </tr>
 </table>
 
-### 🤖 Robótica y hardware
+### <img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/icons/robot.svg" width="21" align="top" alt=""> Robótica y hardware
 
 <table>
 <tr>
@@ -61,10 +54,13 @@ Somos una empresa de desarrollo tecnológico. Hacemos el **software** con el que
 
 ## Hablemos
 
-**Plataforma** — [banarysource.org](https://banarysource.org)  
-**YouTube** — [/c/banarysource](https://www.youtube.com/c/banarysource)  
-**Instagram** — [@banarysource](https://www.instagram.com/banarysource)  
-**X** — [@banarysource](https://x.com/banarysource)  
+<table>
+<tr><td width="50%" valign="top"><a href="https://banarysource.org"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/plataforma-es-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/plataforma-es-light.svg"><img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/plataforma-es-dark.svg" width="100%" alt="Plataforma: banarysource.org. El aula y el club de robótica, en línea."></picture></a></td><td width="50%" valign="top"><a href="mailto:contacto@banarysource.org"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/correo-es-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/correo-es-light.svg"><img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/correo-es-dark.svg" width="100%" alt="Correo: contacto@banarysource.org. Escríbenos y te contestamos."></picture></a></td></tr>
+</table>
+
+<table>
+<tr><td width="33%" valign="top"><a href="https://www.youtube.com/@BanarySource"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/youtube-es-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/youtube-es-light.svg"><img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/youtube-es-dark.svg" width="100%" alt="YouTube: @BanarySource. Prácticas y proyectos."></picture></a></td><td width="33%" valign="top"><a href="https://www.instagram.com/banarysource"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/instagram-es-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/instagram-es-light.svg"><img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/instagram-es-dark.svg" width="100%" alt="Instagram: @banarysource. El día a día del taller."></picture></a></td><td width="33%" valign="top"><a href="https://www.tiktok.com/@banarysource"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/tiktok-es-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/tiktok-es-light.svg"><img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/contacto/tiktok-es-dark.svg" width="100%" alt="TikTok: @banarysource. Robótica en formato corto."></picture></a></td></tr>
+</table>
 
 <div align="center">
 <sub>La mayor parte de nuestro trabajo vive en repositorios privados.<br>

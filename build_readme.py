@@ -19,20 +19,12 @@ import re
 import sys
 import xml.etree.ElementTree as ET
 
-from proyectos import IDIOMAS, TARJETAS
+from proyectos import CONTACTOS, IDIOMAS, TARJETAS
 
 RAIZ = pathlib.Path(__file__).resolve().parent
 BASE = "https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets"
 
 ARCHIVOS = {"es": "README.md", "en": "README.en.md"}
-
-ENLACES = [
-    ("nav_plataforma", "https://banarysource.org", "banarysource.org"),
-    ("YouTube", "https://www.youtube.com/c/banarysource", "/c/banarysource"),
-    ("Instagram", "https://www.instagram.com/banarysource", "@banarysource"),
-    ("X", "https://x.com/banarysource", "@banarysource"),
-]
-
 
 def escapar(s: str) -> str:
     return (s.replace("&", "&amp;").replace("<", "&lt;")
@@ -51,12 +43,37 @@ def alternativo(t: dict, idioma: str) -> str:
             f"{est}: {d['estado']}. {d['enlace']}.")
 
 
+def icono_titulo(nombre: str) -> str:
+    """Icono de un título de sección. Sustituye a un emoji: el emoji lo pinta
+    el sistema de quien mira, asi que cambia de forma segun la plataforma."""
+    return (f'<img src="{BASE}/icons/{nombre}.svg" width="21" align="top"'
+            f' alt="">')
+
+
 def imagen(ruta: str, alt: str, ancho: str = "100%") -> str:
     return (f'<picture>'
             f'<source media="(prefers-color-scheme: dark)" srcset="{BASE}/{ruta}-dark.svg">'
             f'<source media="(prefers-color-scheme: light)" srcset="{BASE}/{ruta}-light.svg">'
             f'<img src="{BASE}/{ruta}-dark.svg" width="{ancho}" alt="{escapar(alt)}">'
             f'</picture>')
+
+
+def panel_contacto(c_: dict, idioma: str) -> str:
+    d = c_[idioma]
+    alt = f'{d["nombre"]}: {d["dato"]}. {d["nota"]}.'
+    img = imagen(f"contacto/{c_['archivo']}-{idioma}", alt)
+    return f'<a href="{c_["url"]}">{img}</a>'
+
+
+def fila_contacto(contactos: list[dict], idioma: str) -> str:
+    """Una tabla por grupo: las celdas de una misma tabla comparten ancho, y
+    mezclar paneles anchos y estrechos en una sola los descuadraria."""
+    ancho = f"{100 // len(contactos)}%"
+    celdas = "".join(f'<td width="{ancho}" valign="top">'
+                     f'{panel_contacto(c_, idioma)}</td>' for c_ in contactos)
+    return f'''<table>
+<tr>{celdas}</tr>
+</table>'''
 
 
 def rejilla(tarjetas: list[dict], idioma: str) -> str:
@@ -83,25 +100,11 @@ def construir(idioma: str) -> str:
     otro = f'<a href="{t["archivo_otro"]}">{t["otro"]}</a>'
     selector = f'<b>{t["nombre"]}</b> &nbsp;·&nbsp; {otro}'
 
-    nav = " &nbsp;·&nbsp;\n  ".join(
-        f'<a href="{url}"><b>{t[clave] if clave in t else clave}</b></a>'
-        for clave, url, _ in ENLACES
-    )
-
-    contacto = "\n".join(
-        f'**{t[clave] if clave in t else clave}** — [{texto}]({url})  '
-        for clave, url, texto in ENLACES
-    )
-
     return f'''<div align="center">
 
 {imagen(f"banner-{idioma}", t["alt_banner"])}
 
 <p>{selector}</p>
-
-<p>
-  {nav}
-</p>
 
 </div>
 
@@ -115,11 +118,11 @@ def construir(idioma: str) -> str:
 
 ## {t["h_proyectos"]}
 
-### 💻 {t["h_software"]}
+### {icono_titulo("codigo")} {t["h_software"]}
 
 {rejilla(TARJETAS[:4], idioma)}
 
-### 🤖 {t["h_hardware"]}
+### {icono_titulo("robot")} {t["h_hardware"]}
 
 {rejilla(TARJETAS[4:], idioma)}
 
@@ -135,7 +138,9 @@ def construir(idioma: str) -> str:
 
 ## {t["h_contacto"]}
 
-{contacto}
+{fila_contacto(CONTACTOS[:2], idioma)}
+
+{fila_contacto(CONTACTOS[2:], idioma)}
 
 <div align="center">
 <sub>{t["pie_1"]}<br>
