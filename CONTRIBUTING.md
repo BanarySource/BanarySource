@@ -72,6 +72,22 @@ que no se puedan desincronizar.
    tarjeta es una imagen: ese `alt` es lo único que puede leer un lector de
    pantalla. Lo arma `build_readme.py` solo; no lo recortes.
 
+## Tres estilos de panel, uno por apartado
+
+Para que el perfil no se lea monótono, cada apartado tiene su tratamiento.
+Los tres comparten paleta, tipografía y radio de esquina: **cambia el
+tratamiento, no el idioma visual**. Si añades un panel, dale el estilo de su
+apartado en vez de inventar un cuarto.
+
+| Apartado | Tratamiento |
+|---|---|
+| **Software** | Filo de color a la izquierda, placa cuadrada con las siglas, chips en píldora, punto redondo de estado. Es el estilo base. |
+| **Hardware** | Aire de plano técnico: banda de color arriba en vez de filo, retícula de puntos, marcas de esquina, placa hexagonal (tuerca), chips de esquina recta con marca de color y cuadrado de estado. |
+| **Contacto** | El color no va en filo ni banda, sino en un disco relleno detrás del icono, con un subrayado corto bajo el nombre. |
+
+El estilo de cada tarjeta se declara en su entrada de `TARJETAS`, en la clave
+`estilo` (`"software"` o `"hardware"`).
+
 ## Las tarjetas son imágenes, y eso cuesta
 
 GitHub borra todo el CSS de un README, así que un panel flotante (fondo, borde
