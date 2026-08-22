@@ -114,8 +114,11 @@ def construir(tema: str, idioma: str, logo_b64: str) -> str:
            href="data:image/png;base64,{logo_b64}"
            preserveAspectRatio="xMidYMid meet"/>
 
+    <!-- 2018 es la fundación OFICIAL de Banary Source, confirmada por Eric.
+         La descripción del canal de YouTube habla de 2015: son los intentos
+         previos, no la empresa. No cambiar esto basándose en el canal. -->
     <text x="324" y="74" font-family="{FUENTE}" font-size="14" font-weight="600"
-          letter-spacing="4.5" fill="{c['tenue']}">EST. 2015 · MÉXICO</text>
+          letter-spacing="4.5" fill="{c['tenue']}">EST. 2018 · MÉXICO</text>
     <text x="320" y="136" font-family="{FUENTE}" font-size="60" font-weight="700"
           letter-spacing="7" fill="{c['texto']}">BANARY SOURCE</text>
     <path class="subray" d="M322 160 H742"/>
