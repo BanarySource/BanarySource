@@ -245,9 +245,8 @@ CHIPS_STACK = {
 # `nota` dice QUÉ hay en cada canal. Nunca cifras de seguidores: un README es
 # estático y un número escrito hoy se congela.
 #
-# OJO con las dos fechas: el panel de YouTube dice "desde 2015" y el banner
-# dice "EST. 2018". No es un error y no hay que "cuadrarlo": el CANAL arrancó
-# en 2015 y la EMPRESA se funda en 2018. Confirmado por Eric.
+# La fecha de la marca es 2015, la misma que el banner: es la que Banary
+# Source maneja como origen de todo, aunque la empresa se constituya en 2018.
 CONTACTOS = [
     dict(
         archivo="plataforma", icono="globo", color="#22C7F5", ancho=620,
