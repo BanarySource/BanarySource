@@ -244,6 +244,10 @@ CHIPS_STACK = {
 #
 # `nota` dice QUÉ hay en cada canal. Nunca cifras de seguidores: un README es
 # estático y un número escrito hoy se congela.
+#
+# OJO con las dos fechas: el panel de YouTube dice "desde 2015" y el banner
+# dice "EST. 2018". No es un error y no hay que "cuadrarlo": el CANAL arrancó
+# en 2015 y la EMPRESA se funda en 2018. Confirmado por Eric.
 CONTACTOS = [
     dict(
         archivo="plataforma", icono="globo", color="#22C7F5", ancho=620,
@@ -265,9 +269,9 @@ CONTACTOS = [
         archivo="youtube", icono="youtube", color="#FF3B30", ancho=400,
         url="https://www.youtube.com/@BanarySource",
         es=dict(nombre="YouTube", dato="@BanarySource",
-                nota="Cursos y tutoriales prácticos"),
+                nota="Cursos y tutoriales desde 2015"),
         en=dict(nombre="YouTube", dato="@BanarySource",
-                nota="Hands-on courses and tutorials"),
+                nota="Courses and tutorials since 2015"),
     ),
     dict(
         archivo="instagram", icono="instagram", color="#E1306C", ancho=400,
