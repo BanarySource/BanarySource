@@ -13,7 +13,7 @@
   <!-- Panel flotante -->
   <rect x="14" y="10" width="592" height="344" rx="18"
         fill="#FFFFFF" stroke="#E1E7EC" filter="url(#sombra)"/>
-  <g clip-path="url(#recorte)"><rect x="14" y="10" width="7" height="344" fill="#0E7FA8"/></g>
+  <g clip-path="url(#recorte)"><rect x="14" y="10" width="592" height="100" fill="#0E7FA8" fill-opacity=".08"/><rect x="14" y="108" width="592" height="2.5" fill="#0E7FA8" fill-opacity=".9"/></g>
 
   <!-- Placa con la sigla -->
   <rect x="48" y="42" width="48" height="48" rx="13" fill="#0E7FA8" fill-opacity=".12" stroke="#0E7FA8" stroke-opacity=".5"/>

@@ -81,12 +81,17 @@ apartado en vez de inventar un cuarto.
 
 | Apartado | Tratamiento |
 |---|---|
-| **Software** | Filo de color a la izquierda, placa cuadrada con las siglas, chips en píldora, punto redondo de estado. Es el estilo base. |
-| **Hardware** | Aire de plano técnico: banda de color arriba en vez de filo, retícula de puntos, marcas de esquina, placa hexagonal (tuerca), chips de esquina recta con marca de color y cuadrado de estado. |
+| **Software** | Cabecera tintada del color del proyecto con divisor limpio debajo, placa cuadrada con las siglas, chips en píldora, punto redondo de estado. Aire de producto. |
+| **Hardware** | Aire de plano técnico: banda fina de color arriba, retícula de puntos, marcas de esquina, placa hexagonal (tuerca), chips de esquina recta con marca de color y cuadrado de estado. |
 | **Contacto** | El color no va en filo ni banda, sino en un disco relleno detrás del icono, con un subrayado corto bajo el nombre. |
 
 El estilo de cada tarjeta se declara en su entrada de `TARJETAS`, en la clave
 `estilo` (`"software"` o `"hardware"`).
+
+Software y hardware **leen los dos de arriba abajo** a propósito: software
+tuvo un filo de color a la izquierda y peleaba con la sombra del panel. No se
+confunden porque uno es una CABECERA con cuerpo tintado y el otro una BANDA
+fina sobre textura de plano.
 
 ## Las tarjetas son imágenes, y eso cuesta
 

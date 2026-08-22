@@ -14,11 +14,16 @@ rejilla no queda dispareja.
 
 DOS ESTILOS, uno por apartado, para que el perfil no se lea monotono:
 
-  software  Filo de color a la izquierda, placa cuadrada con las siglas y
-            chips en pildora. Es el estilo base, limpio y de producto.
-  hardware  Aire de plano tecnico: banda de color arriba en vez de filo,
-            reticula de puntos de fondo, marcas de esquina, placa hexagonal
-            (tuerca) y chips de esquina recta.
+  software  Cabecera tintada del color del proyecto con un divisor limpio
+            debajo, placa cuadrada con las siglas y chips en pildora. Aire de
+            producto.
+  hardware  Aire de plano tecnico: banda fina de color arriba, reticula de
+            puntos de fondo, marcas de esquina, placa hexagonal (tuerca) y
+            chips de esquina recta.
+
+Los dos leen de arriba abajo (el filo lateral que tenia software peleaba con
+la sombra del panel), pero no se confunden: una CABECERA con cuerpo tintado
+frente a una BANDA fina sobre textura de plano.
 
 Comparten paleta, tipografia y radio de esquina: cambia el tratamiento, no
 el idioma visual. El apartado de contacto usa un tercer estilo, en
@@ -37,11 +42,11 @@ TEMAS = {
     "dark": dict(panel="#1E2126", borde="#2E343C", titulo="#F7F8FA",
                  texto="#A3AAB3", chip="#262A31", chip_borde="#343A43",
                  chip_texto="#C6CED6", sombra="#000000", sombra_op=".45",
-                 tile_op=".16"),
+                 tile_op=".16", cabecera_op=".11"),
     "light": dict(panel="#FFFFFF", borde="#E1E7EC", titulo="#16181C",
                   texto="#5A626B", chip="#F2F5F8", chip_borde="#DFE5EB",
                   chip_texto="#3A424B", sombra="#8C99A6", sombra_op=".28",
-                  tile_op=".12"),
+                  tile_op=".12", cabecera_op=".08"),
 }
 
 FUENTE = "'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif"
@@ -169,9 +174,15 @@ def construir(t: dict, idioma: str, tema: str) -> str:
     tam_sigla = 17 if len(t["sigla"]) < 3 else 14
 
     if es_software:
-        # Filo de color a la izquierda y placa cuadrada.
+        # Cabecera tintada + divisor, y placa cuadrada. Va dentro del recorte,
+        # asi que las esquinas de arriba salen redondeadas solas.
         patron = ""
-        acento_panel = f'<rect x="{px}" y="{py}" width="7" height="{ph}" fill="{a}"/>'
+        acento_panel = (
+            f'<rect x="{px}" y="{py}" width="{pw}" height="100" fill="{a}"'
+            f' fill-opacity="{c["cabecera_op"]}"/>'
+            f'<rect x="{px}" y="{py + 98}" width="{pw}" height="2.5" fill="{a}"'
+            f' fill-opacity=".9"/>'
+        )
         placa = (f'<rect x="{x0}" y="42" width="48" height="48" rx="13" fill="{a}"'
                  f' fill-opacity="{c["tile_op"]}" stroke="{a}" stroke-opacity=".5"/>')
     else:
