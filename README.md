@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
-  <img src="assets/banner-dark.svg" width="100%" alt="Banary Source — Robótica · Software · Educación">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/banner-light.svg">
+  <img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/banner-dark.svg" width="100%" alt="Banary Source — Robótica · Software · Educación">
 </picture>
 
 <p>
@@ -149,9 +149,9 @@ del canal. Pensada para que un estudiante la arme y la use, no para mirarla.
 
 <div align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/stack-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/stack-light.svg">
-  <img src="assets/stack-dark.svg" width="100%" alt="Tecnologías: TypeScript, React, Next.js, Node.js, Python, FastAPI, Vite, Electron, PostgreSQL, Supabase, Prisma, Cloudflare Workers, Vercel, Railway, Stripe, Docker, ESP32, RP2040, Arduino, C++, PIC18F, KiCad, impresión 3D y visión artificial">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/stack-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/stack-light.svg">
+  <img src="https://raw.githubusercontent.com/BanarySource/BanarySource/main/assets/stack-dark.svg" width="100%" alt="Tecnologías: TypeScript, React, Next.js, Node.js, Python, FastAPI, Vite, Electron, PostgreSQL, Supabase, Prisma, Cloudflare Workers, Vercel, Railway, Stripe, Docker, ESP32, RP2040, Arduino, C++, PIC18F, KiCad, impresión 3D y visión artificial">
 </picture>
 </div>
 
