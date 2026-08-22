@@ -1,0 +1,4 @@
+# Vista previa local de los SVG (se sirve con: python -m http.server)
+# Se conserva en el repo a proposito; aqui solo se ignoran temporales.
+*.tmp
+__pycache__/
