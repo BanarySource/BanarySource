@@ -115,7 +115,7 @@ def construir(tema: str, idioma: str, logo_b64: str) -> str:
            preserveAspectRatio="xMidYMid meet"/>
 
     <text x="324" y="74" font-family="{FUENTE}" font-size="14" font-weight="600"
-          letter-spacing="4.5" fill="{c['tenue']}">EST. 2018 · MÉXICO</text>
+          letter-spacing="4.5" fill="{c['tenue']}">EST. 2015 · MÉXICO</text>
     <text x="320" y="136" font-family="{FUENTE}" font-size="60" font-weight="700"
           letter-spacing="7" fill="{c['texto']}">BANARY SOURCE</text>
     <path class="subray" d="M322 160 H742"/>
